@@ -1,18 +1,21 @@
-const MAX_SPEED = 6;
+const MAX_SPEED = 3;
 const DRAW_DISTANCE_THRESHOLD = 200;
 
 //an array to store all our agents
 var agents = [];
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(windowWidth, windowHeight);
   background(0);
   
   for (let i = 0; i < 16; i++) {
     createAgent(random(width), random(height));
   }
 }
-
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  background(0);
+}
 function draw() {
   // background(255);
   
